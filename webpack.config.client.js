@@ -46,6 +46,9 @@ const development = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'public'),
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
